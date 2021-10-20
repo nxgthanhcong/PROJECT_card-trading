@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NETCore_CardTrading</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Custom-Files -->
+    <link rel="stylesheet" href="~/css/style.css" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <!-- font-awesome-icons -->
+    <link  rel="stylesheet" href="~/css/font-awesome.css">
+    <!-- //font-awesome-icons -->
+    <!-- /Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900"
+          rel="stylesheet">
+    <!-- //Fonts -->
+</head>
+<body>
+    @await Html.PartialAsync("_HeaderPartial");
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @await Html.PartialAsync("_FooterPartial");
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+    <script>
+        var curentUrl = window.location.pathname;
+        console.log("curentUrl: ", curentUrl)
+        if (curentUrl !== "/") {
+            $("#home").addClass("inner")
+        } else {
+            $(".banner-info").append(`
+                <p>Trending of the week</p>
+                <h3 class="mb-4">Connect every one</h3>
+                <div class="ban-buttons">
+                    <a href="shop-single.html" class="btn">Shop Now</a>
+                    <a href="single.html" class="btn active">Read More</a>
+                </div>
+            `);
+        }
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+
+@*<partial name="_LoginPartial" />*@
