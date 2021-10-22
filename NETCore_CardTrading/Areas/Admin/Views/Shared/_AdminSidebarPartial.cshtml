@@ -1,0 +1,35 @@
+﻿<!-- MENU SIDEBAR-->
+
+<aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+        <a href="#">
+            <img src="/admin/images/icon/logo.png" alt="Cool Admin" />
+        </a>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+            <ul class="list-unstyled navbar__list">
+                <li class="has-sub">
+                    <span class="js-arrow" onclick="this.style.cokor='#4272d7'">
+                        <i style="margin-right: 19px;" class="fas fa-table"></i>Manages
+                    </span>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="login.html">Product</a>
+                        </li>
+                        <li>
+                            <a href="register.html">Category</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a asp-controller="Home" asp-action="Map">
+                        <i class="fas fa-map-marker-alt"></i>Maps
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+<!-- END MENU SIDEBAR-->
